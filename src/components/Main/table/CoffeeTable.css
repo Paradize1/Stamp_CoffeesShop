@@ -103,6 +103,15 @@
 .modal-overlay.closing {
   animation: slideDown 0.7s ease-in;
 }
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный темный фон */
+  z-index: 999; /* Фон будет ниже модального окна */
+}
 
 /* ------------------------------------------------- */
 
@@ -309,5 +318,114 @@ text-align: center;
 
 /* ------------------------------------------------- */
 /* МОДАЛЬНОЕ СИРОПОВ */
+.syrop-modal-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 1080px;
+  height: 942px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border-radius: 35px 35px 0px 0px;
+  animation: slideUp 0.7s ease-out;
+}
 
 
+.syrop-modal-overlay.closing {
+  animation: slideDown 0.7s ease-in;
+}
+
+.syrup-selection {
+  display: flex;
+  flex-direction: column;
+  width: 1040px;
+  height: 521;
+  margin-left: 20px;
+  margin-top: 300px;
+}
+.syrup-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1040px;
+  height: 119px;
+  font-family: Mont;
+  font-size: 38px;
+  font-weight: 400;
+
+}
+
+.syrup-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 333px;
+  height: 95px;
+
+}
+
+.syrop-plus,
+.syrop-minus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 95px;
+  border-radius: 15px;
+  background: rgb(243, 243, 243);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+}
+
+.syrop-plus {
+  background-color: #f0c14b;
+}
+
+
+.syrop-plus:active,
+.syrop-minus:active {
+  transform: scale(0.07);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pay_syrop_button {
+  width: 1037px;
+  height: 163px;
+  box-sizing: border-box;
+  border: 1px solid rgb(245, 208, 9);
+  border-radius: 35px;
+  background: rgb(245, 208, 9);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+}
+.pay_syrop_button:active {
+  transform: scale(0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pay_syrop_text {
+  /* Оплатить */
+  width: 238px;
+  height: 53px;
+  margin-top: 50px;
+  margin-left: 43px;
+  font-family: Mont;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.pay_syrop_price {
+  position: absolute;
+  width: 245px;
+height: 128px;
+bottom: 20px;
+left: 740px;
+gap: 0px;
+opacity: 0px;
+
+font-family: Mont;
+font-size: 100px;
+font-weight: 700;
+line-height: 127.8px;
+}

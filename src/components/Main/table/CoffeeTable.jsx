@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import './CoffeeTable.css';
 
 const CoffeeTable = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({ name: '', image: '', prices: { small: 0, medium: 0, large: 0 } });
+
+  const [modalContent, setModalContent] = useState({ 
+    name: '', 
+    image: '', 
+    prices: { small: 0, medium: 0, large: 0 } });
+
   const [isClosing, setIsClosing] = useState(false);
   const [selectedSize, setSelectedSize] = useState('small');
   const [isSyrupModalOpen, setSyrupModalOpen] = useState(false); // Для второго модального окна
-  const [syrups, setSyrups] = useState({ vanilla: 0, mint: 0, caramel: 0, chocolate: 0 });
+  const [syrups, setSyrups] = useState({
+    vanilla: 0,
+    mint: 0,
+    caramel: 0,
+    chocolate: 0
+  });
+
+  const [finalPrice, setFinalPrice] = useState(0);
 
   const openModal = (name, image, prices) => {
     setModalContent({ name, image, prices});
@@ -44,15 +57,34 @@ const CoffeeTable = () => {
     setSyrupModalOpen(false);
   };
 
+  
   // Функции для изменения грамм сиропов
-  const handleSyrupChange = (syrupType, amount) => {
-    setSyrups((prevSyrups) => {
-      const newAmount = prevSyrups[syrupType] + amount;
+  const handleSyrupChange = (type, change) => {
+    setSyrups(prevSyrups => {
+      const newAmount = Math.max(prevSyrups[type] + change, 0);
       return {
         ...prevSyrups,
-        [syrupType]: newAmount >= 0 ? newAmount : 0, // Не допускаем отрицательных значений
+        [type]: newAmount
       };
     });
+  };
+  
+  const getSyrupPrice = () => {
+  const syrupPrice = 20;
+  const totalSyrups = Object.values(syrups).reduce((acc, amount) => acc + amount, 0);
+  return syrupPrice * totalSyrups;
+  };
+
+  useEffect(() => {
+    const basePrice = getPrice();
+    const syrupPrice = getSyrupPrice();
+    setFinalPrice(basePrice + syrupPrice);
+  }, [selectedSize, syrups]);
+
+  const handlePayClick = () => {
+    const price = isSyrupModalOpen? finalPrice : getPrice();
+    localStorage.setItem('price', price);
+    window.location.href = '/pay';
   };
 
   return (
@@ -102,6 +134,8 @@ const CoffeeTable = () => {
 
       {/* Модальное окно напитка */}
       {(isModalOpen || isClosing) && (
+      <div className={`modal-background ${isClosing ? 'closing' : ''}`}>
+
         <div className={`modal-overlay ${isClosing ? 'closing' : ''}`} onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-close" onClick={closeModal}>
@@ -130,32 +164,34 @@ const CoffeeTable = () => {
 
             <div className="sirop" onClick={openSyrupModal}>Хотите добавить сироп?</div>
 
-            <div className="pay_button">
+            <div className="pay_button" onClick={handlePayClick}>
               <div className="pay_text">Оплатить</div>
               <div className="pay_price">{getPrice()}₽</div>
             </div>
           </div>
         </div>
+      </div>
       )}
 
       {/* Модальное окно для сиропов */}
-      {isSyrupModalOpen && (
-        <div className="modal-overlay" onClick={closeSyrupModal}>
+      {(isSyrupModalOpen || isClosing) && (
+      <div className={`modal-background ${isClosing ? 'closing' : ''}`}>
+
+        <div className="syrop-modal-overlay">
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-close" onClick={closeSyrupModal}>
               <div className="x"></div>
             </div>
 
-            <div className="syrup-title">Выберите добавки сиропов</div>
 
             <div className="syrup-selection">
               {/* Ванильный сироп */}
               <div className="syrup-item">
                 <div className="syrup-name">Ванильный</div>
                 <div className="syrup-controls">
-                  <button onClick={() => handleSyrupChange('vanilla', -1)}>-</button>
+                  <div className='syrop-minus' onClick={() => handleSyrupChange('vanilla', -1)}>-</div>
                   <span>{syrups.vanilla} гр.</span>
-                  <button onClick={() => handleSyrupChange('vanilla', 1)}>+</button>
+                  <div className='syrop-plus' onClick={() => handleSyrupChange('vanilla', 1)}>+</div>
                 </div>
               </div>
 
@@ -163,9 +199,9 @@ const CoffeeTable = () => {
               <div className="syrup-item">
                 <div className="syrup-name">Мятный</div>
                 <div className="syrup-controls">
-                  <button onClick={() => handleSyrupChange('mint', -1)}>-</button>
+                  <div className='syrop-minus' onClick={() => handleSyrupChange('mint', -1)}>-</div>
                   <span>{syrups.mint} гр.</span>
-                  <button onClick={() => handleSyrupChange('mint', 1)}>+</button>
+                  <div className='syrop-plus' onClick={() => handleSyrupChange('mint', 1)}>+</div>
                 </div>
               </div>
 
@@ -173,9 +209,9 @@ const CoffeeTable = () => {
               <div className="syrup-item">
                 <div className="syrup-name">Карамельный</div>
                 <div className="syrup-controls">
-                  <button onClick={() => handleSyrupChange('caramel', -1)}>-</button>
+                  <div className='syrop-minus' onClick={() => handleSyrupChange('caramel', -1)}>-</div>
                   <span>{syrups.caramel} гр.</span>
-                  <button onClick={() => handleSyrupChange('caramel', 1)}>+</button>
+                  <div className='syrop-plus' onClick={() => handleSyrupChange('caramel', 1)}>+</div>
                 </div>
               </div>
 
@@ -183,13 +219,22 @@ const CoffeeTable = () => {
               <div className="syrup-item">
                 <div className="syrup-name">Шоколадный</div>
                 <div className="syrup-controls">
-                  <button onClick={() => handleSyrupChange('chocolate', -1)}>-</button>
+                  <div className='syrop-minus' onClick={() => handleSyrupChange('chocolate', -1)}>-</div>
                   <span>{syrups.chocolate} гр.</span>
-                  <button onClick={() => handleSyrupChange('chocolate', 1)}>+</button>
+                  <div className='syrop-plus' onClick={() => handleSyrupChange('chocolate', 1)}>+</div>
                 </div>
               </div>
             </div>
+
+            
+
           </div>
+
+          <div className="pay_syrop_button"onClick={handlePayClick}>
+              <div className="pay_syrop_text">Оплатить</div>
+              <div className="pay_syrop_price">{finalPrice}₽</div>
+            </div>
+        </div>
         </div>
       )}
 

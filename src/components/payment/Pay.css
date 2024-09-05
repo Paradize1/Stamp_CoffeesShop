@@ -1,0 +1,133 @@
+
+.Pay {
+    width: 1080px;
+    height: 1920px;
+    background-color:rgb(245, 208, 9);
+}
+
+
+.payment-selection {
+    width: 1080px;
+    height: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.payment-option {
+    width: 900px;
+height: 150px;
+left: 21px;
+top: 1697px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 35px;
+
+background: rgb(255, 255, 255);
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 48px;
+font-weight: 400;
+line-height: 110.5%;
+letter-spacing: 0%;
+margin-bottom: 20px;
+}
+
+
+.back {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 100px;
+    border-radius: 50px;
+    z-index: 1;
+
+    font-family: Mont;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 127.8px;
+    text-align: right;
+
+}
+
+.back_to_selection{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 100px;
+    left: 370px;
+    border-radius: 50px;
+    z-index: 1;
+
+    font-family: Mont;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 127.8px;
+    text-align: right;
+}
+
+.card_img {
+    position: absolute;
+    width: 432.67px;
+    height: 274.85px;
+    left: 323.33px;
+    top: 665px;
+    background-image: url('./img/card.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card_pay_text {
+/* Приложите карту к терминалу */
+position: absolute;
+width: 1039px;
+height: 186px;
+top: 950px;
+right: 30px;
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 72px;
+font-weight: 400;
+line-height: 128.5%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.stop_pay_button {
+/* Rectangle 87 */
+position: absolute;
+width: 1037px;
+height: 163px;
+left: 21px;
+top: 1697px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 35px;
+
+background: rgb(255, 255, 255);
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 48px;
+font-weight: 400;
+line-height: 110.5%;
+letter-spacing: 0%;
+}
+
+.total_to_pay_text {
+    position: absolute;
+width: 1039px;
+height: 186px;
+top: 1200px;
+right: 30px;
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 72px;
+font-weight: 400;
+line-height: 128.5%;
+letter-spacing: 0%;
+text-align: center;
+}
