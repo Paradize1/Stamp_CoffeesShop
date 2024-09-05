@@ -96,7 +96,6 @@ text-align: center;
 }
 
 .stop_pay_button {
-/* Rectangle 87 */
 position: absolute;
 width: 1037px;
 height: 163px;
@@ -130,4 +129,283 @@ font-weight: 400;
 line-height: 128.5%;
 letter-spacing: 0%;
 text-align: center;
+}
+
+/* ТРАНЗАКЦИЯ НЕ ПРОШЛА!!!!! */
+
+.BadPay {
+    width: 1080px;
+    height: 1920px;
+    background-color: red;
+}
+.Bad_img {
+
+}
+.badeclipse {
+    position: absolute;
+    width: 334px;
+    height: 334px;
+    left: 373px;
+    top: 627px;
+
+    box-sizing: border-box;
+    border: 7px solid rgb(255, 255, 255);
+    border-radius: 50%;
+}
+.badx {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 60px;
+    top: 60px;
+
+    background-image: url("../img/drinks/coffee/x.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.BadText {
+/* Оплата не прошла */
+    position: absolute;
+    width: 1039px;
+    height: 93px;
+    left: 21px;
+    top: 1008px;
+
+    color: rgb(255, 255, 255);
+    font-family: Mont;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 128.5%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+.TryAgain {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1037px;
+    height: 163px;
+    left: 21px;
+    top: 1504px;
+    border-radius: 35px;
+    background: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    font-family: Mont;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 128.5%;
+    letter-spacing: 0%;
+    text-align: center;
+    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+
+}
+.CanselButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1037px;
+    height: 163px;
+    left: 21px;
+    right: 22px;
+    top: 1697px;
+    bottom: 60px;
+
+    color: rgb(255, 255, 255);
+    font-family: Mont;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 128.5%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 35px;
+    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+
+
+}
+
+.CanselButton:active,
+.TryAgain:active {
+  transform: scale(0.3);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* УСПЕШНАЯ ТРАНЗАКЦИЯ, ТАЙМЕР ЗАПУЩЕН!!!!! */
+
+.Timer {
+    position: relative;
+    height: 100vh; /* Задайте высоту по вашему усмотрению */
+    width: 100vw;  /* Задайте ширину по вашему усмотрению */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Animated_time {
+    /* Ellipse 2 */
+position: absolute;
+width: 874.99px;
+height: 874.99px;
+left: 108.14px;
+transform: rotate(0.22deg);
+
+box-sizing: border-box;
+border: 5px solid rgb(234, 234, 234);
+background: rgba(221, 13, 255, 0);
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(90deg); /* Поворачиваем SVG, чтобы анимация начиналась сверху */
+}
+
+.background-circle {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 10;
+}
+
+.progress-circle {
+    fill: none;
+    stroke: yellow;
+    stroke-width: 1;
+    stroke-dasharray: 282; /* Общее значение окружности: 2 * π * 45 */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    animation: countdown 60s linear infinite;
+}
+
+.Counting_down {
+    position: absolute;
+    width: 871px;
+    height: 335px;
+    left: 112px;
+    top: 784px;
+
+    color: rgb(0, 0, 0);
+    font-family: Mont;
+    font-size: 260px;
+    font-weight: 400;
+    line-height: 128.5%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.Timer_text {
+    /* Приготовление напитка */
+    position: absolute;
+    width: 529px;
+    height: 57px;
+    left: 276px;
+    top: 1078px;
+
+    color: rgb(167, 167, 167);
+    font-family: Mont;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 141.5%;
+    letter-spacing: 3.5%;
+    text-align: center;
+}
+
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 282; /* Начальная точка анимации */
+    }
+    to {
+        stroke-dashoffset: 0; /* Конечная точка анимации */
+    }
+}
+
+
+
+
+.Ready {
+    width: 1080px;
+    height: 1920px;
+    background: rgb(245, 208, 9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Ready_img {
+    width: 216.58px;
+    height: 308.4px;
+
+    background-image: url("../img/drinks/coffee/Ready.svg");
+}
+.ReadyText1 {
+/* Напиток готов! */
+width: 1039px;
+height: 123px;
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 96px;
+font-weight: 400;
+line-height: 128.5%;
+text-align: center;
+}
+
+.ReadyText2 {
+/* вы можете забрать его */
+width: 1039px;
+height: 62px;
+
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 48px;
+font-weight: 400;
+line-height: 128.5%;
+text-align: center;
+}
+
+
+/* ОПЛАТА НАЛИЧКОЙ!!!!! */
+.cash_img {
+    width: 216.58px;
+    height: 308.4px;
+
+    background-image: url("../img/main/cash.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cash-payment {
+    width: 1080px;
+    height: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cash_pay_text {
+    width: 1039px;
+    height: 123px;
+    
+    color: rgb(0, 0, 0);
+    font-family: Mont;
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 128.5%;
+    text-align: center;
+}
+.cash_amount {
+    width: 1039px;
+    height: 62px;
+    margin-top: 300px;
+    
+    color: rgb(0, 0, 0);
+    font-family: Mont;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 128.5%;
+    text-align: center;
 }
