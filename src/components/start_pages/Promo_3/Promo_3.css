@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'Mont';
+    src: url('../../fonts/Mont-Regular.eot');
+    src: local('Mont Regular'), local('Mont-Regular'),
+        url('../../fonts/Mont-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Mont-Regular.woff2') format('woff2'),
+        url('../../fonts/Mont-Regular.woff') format('woff'),
+        url('../../fonts/Mont-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../../fonts/Mont-Bold.eot');
+    src: local('Mont Bold'), local('Mont-Bold'),
+        url('../../fonts/Mont-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Mont-Bold.woff2') format('woff2'),
+        url('../../fonts/Mont-Bold.woff') format('woff'),
+        url('../../fonts/Mont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../../fonts/Mont-Black.eot');
+    src: local('Mont Black'), local('Mont-Black'),
+        url('../../fonts/Mont-Black.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/Mont-Black.woff2') format('woff2'),
+        url('../../fonts/Mont-Black.woff') format('woff'),
+        url('../../fonts/Mont-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.promo_3 {
+    height: 1920px;
+    width: 1080px;
+    position: relative;
+    /* border: 3px solid black;  */
+
+}
+
+
+.promo_1_button{
+position: absolute;
+width: 403px;
+height: 403px;
+left: 338px;
+top: 1404px;
+border-radius: 125px;
+background: rgb(245, 208, 9);
+border-color: aliceblue;
+
+font-size: 48px;
+text-align: center;
+
+}
+
+
+.coffeeBlur1{
+    /* Слой 2 */
+position: absolute;
+width: 330px;
+height: 330px;
+left: 110px;
+top: 1168px;
+
+background: url("../../img/promo_1/coffeeBlur1.svg");
+background-repeat: no-repeat;
+background-size: contain;
+z-index: 3;
+
+}
+.coffeeBlur2 {
+    /* Слой 4 */
+position: absolute;
+width: 123px;
+height: 107px;
+left: 856px;
+top: 226px;
+background: url("../../img/promo_1/coffeeBlur2.svg");
+background-repeat: no-repeat;
+
+background-size: contain;
+z-index: 3;
+}
+.coffeeBlur2_2 {
+    position: absolute;
+width: 123px;
+height: 107px;
+left: 880px;
+top: 1364px;
+background: url("../../img/promo_1/coffeeBlur2.svg");
+background-repeat: no-repeat;
+
+background-size: contain;
+z-index: 3;
+}
+
+.coffeeNormal{
+    /* Слой 5 */
+position: absolute;
+width: 180px;
+height: 180px;
+left: 501.93px;
+top: 109px;
+background: url("../../img/promo_1/cofeeNormal.svg");
+background-size: contain;
+z-index: 2;
+background-repeat: no-repeat;
+z-index: 3;
+}
+
+.coffeeLittle2 {
+position: absolute;
+width: 80px;
+height: 80px;
+left: 194px;
+top: 152px;
+
+background: url("../../img/promo_1/coffeeLittle.svg");
+background-size: contain;
+background-repeat: no-repeat;
+z-index: 3;
+
+}
+
+
+.text3-container_promo {
+    /* ЭТО ТВОЙ КОФЕ */
+    position: absolute;
+    width: 591px;
+    height: 687px;
+    top: 499px;
+
+    font-family: Mont;
+    font-size: 207px;
+    font-weight: 400;
+    line-height: 110%;
+    align-items: center;
+
+    z-index: 3;
+
+}
+
+
+.text_promo3_footer {
+/* Коснитесь экрана */
+position: absolute;
+width: 346px;
+height: 142px;
+left: 650px;
+top: 1686px;
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 55px;
+font-weight: 400;
+line-height: 110.5%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.coffee_3 {
+/* Слой 1 */
+position: absolute;
+width: 118px;
+height: 89px;
+left: 738px;
+top: 20px;
+
+background: url("../../img/promo_2/cofee_3.svg");
+background-size: contain;
+background-repeat: no-repeat;
+z-index: 3;
+}
+
+.promo3_background {
+    /* Промо 3 */
+position: relative;
+width: 1080px;
+height: 1920px;
+/* height: 2200px; */
+
+background: rgb(232, 196, 15);
+}
+
+.cup1{
+/* Cup-1 */
+position: absolute;
+width: 1092px;
+height: 1102px;
+left: 206px;
+top: 316px;
+background: url("../../img/promo_3/cup2.svg");
+background-size: contain;
+background-repeat: no-repeat;
+z-index: 3;
+
+}
+.cup2{
+/* Cup */
+position: absolute;
+width: 1008px;
+height: 622px;
+top: 1300px;
+background: url("../../img/promo_3/cup1.svg");
+background-size: contain;
+background-repeat: no-repeat;
+z-index: 3;
+/* border: 3px solid black;  */
+
+}
+
+.eclipse5{
+    /* Ellipse 5 */
+    position: absolute;
+    width: 922px;
+    height: 400px;
+    left: 350px;
+    top: 1521px;
+    background: url("../../img/promo_3/eclipse5.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}

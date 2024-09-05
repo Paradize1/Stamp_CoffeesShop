@@ -1,0 +1,110 @@
+
+
+.promo_1 {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background: rgb(255, 255, 255);
+    /* border: 3px solid black;  */
+}
+
+.promo_1_button1{
+position: absolute;
+width: 403px;
+height: 403px;
+left: 338px;
+top: 1404px;
+border-radius: 125px;
+background: rgb(245, 208, 9);
+border-color: aliceblue;
+
+font-size: 48px;
+text-align: center;
+
+}
+
+.arms1{
+position: absolute;
+width: 886px;
+height: 953px;
+top: 385px;
+background: url("../../img/promo_1/arms.svg");
+background-repeat: no-repeat;
+background-size: contain;
+
+z-index: 1;
+}
+.galka_pink1 {
+    /* Vector */
+position: absolute;
+width: 450.19px;
+height: 939.9px;
+top: 324px;
+left: 100px;
+background: url("../../img/promo_1/galka.svg");
+background-repeat: no-repeat;
+}
+.StarYellow1{
+    /* Vector */
+position: absolute;
+width: 286.56px;
+height: 286.34px;
+left: 575.44px;
+top: 508px;
+background: url("../../img/promo_1/StarYellow.svg");
+
+background-repeat: no-repeat;
+
+}
+.coffeeBlur11{
+    /* Слой 2 */
+position: absolute;
+width: 330px;
+height: 330px;
+left: 630px;
+top: 1111px;
+
+background: url("../../img/promo_1/coffeeBlur1.svg");
+background-repeat: no-repeat;
+background-size: contain;
+}
+.coffeeBlur21 {
+    /* Слой 4 */
+position: absolute;
+width: 123px;
+height: 107px;
+left: 825px;
+top: 372px;
+background: url("../../img/promo_1/coffeeBlur2.svg");
+background-repeat: no-repeat;
+
+background-size: contain;
+}
+
+.coffeeNormal1{
+    /* Слой 5 */
+position: absolute;
+width: 180px;
+height: 180px;
+left: 150.93px;
+top: 1017px;
+background: url("../../img/promo_1/cofeeNormal.svg");
+background-size: contain;
+z-index: 2;
+background-repeat: no-repeat;
+}
+
+.coffeeLittle1 {
+position: absolute;
+width: 80px;
+height: 80px;
+top: 200.36px;
+left: 501.64px;
+
+
+background: url("../../img/promo_1/coffeeLittle.svg");
+background-size: contain;
+background-repeat: no-repeat;
+
+}
+

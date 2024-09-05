@@ -1,0 +1,313 @@
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+.coffee-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+  
+.coffee-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 333px;
+  height: 491px;
+  margin: 10px;
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+}
+
+.coffee-item:active {
+  transform: scale(0.3);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+  
+.coffee-image {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+  
+.espresso-image {
+  background-image: url('../../img/drinks/coffee/espresso.svg');
+}
+  
+.americano-image {
+  background-image: url('../../img/drinks/coffee/amerikano.svg');
+}
+  
+.latte-image {
+  background-image: url('../../img/drinks/coffee/latte.svg');
+  margin-left: 100px;
+}
+  
+.cappuccino-image {
+  background-image: url('../../img/drinks/coffee/kapich.svg');
+}
+  
+.macchiato-image {
+  background-image: url('../../img/drinks/coffee/makiato.svg');
+}
+  
+.coffee-text {
+  font-family: Mont;
+  font-size: 32px;
+  font-weight: 400;  
+}
+  
+.coffee-price {
+  font-family: Mont;
+  font-size: 54px;
+  font-weight: 700;  
+}
+
+/* ------------------------------------------------- */
+/* модальное окно напитка */
+.modal-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 1080px;
+  height: 1686px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: slideUp 0.7s ease-out;
+}
+
+.modal-overlay.closing {
+  animation: slideDown 0.7s ease-in;
+}
+
+/* ------------------------------------------------- */
+
+.pay_button {
+  position: absolute;
+  width: 1037px;
+  height: 163px;
+  left: 21px;
+  top: 1470px;
+  box-sizing: border-box;
+  border: 1px solid rgb(245, 208, 9);
+  border-radius: 35px;
+  background: rgb(245, 208, 9);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+}
+.pay_button:active {
+  transform: scale(0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pay_text {
+  /* Оплатить */
+  width: 238px;
+  height: 53px;
+  margin-top: 50px;
+  margin-left: 43px;
+  font-family: Mont;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.pay_price {
+  position: absolute;
+  width: 245px;
+height: 128px;
+top: 20px;
+left: 740px;
+gap: 0px;
+opacity: 0px;
+
+font-family: Mont;
+font-size: 100px;
+font-weight: 700;
+line-height: 127.8px;
+text-align: right;
+
+}
+/* ------------------------------------------------- */
+
+.modal-drink-img {
+  position: absolute;
+  width: 400px;
+  height: 539px;
+  left: 300px;
+  top: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+/* ------------------------------------------------- */
+/* Раздел с объёмом */
+
+.modal-drink-size {
+  display: flex;
+  height: 368px;
+  margin-top: 70px;
+  justify-content: space-between;
+}
+
+.size_1,
+.size_2,
+.size_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 368px;
+  width: 333px;
+
+  border-radius: 35px;
+
+  font-family: Mont;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 46.41px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.size_3 {
+  margin-right: 30px;
+}
+.size_1.active,
+.size_2.active,
+.size_3.active {
+  background-color: #f0c14b; 
+  transform: scale(1.05); 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.size_1_img,
+.size_2_img,
+.size_3_img {
+  
+  background-repeat: no-repeat;
+  background-size: contain; 
+  margin-bottom: 50px; 
+
+}
+
+.size_1_img {
+  width: 83.24px;
+  height: 118.53px;
+  background-image: url('../../img/drinks/coffee/200ml.svg');
+}
+
+.size_2_img {
+  width: 100.13px;
+  height: 142.58px;
+  background-image: url('../../img/drinks/coffee/200ml.svg'); /* Измените на нужное изображение */
+  margin-top: -20px;
+}
+
+.size_3_img {
+  width: 122.42px;
+  height: 174.32px;
+  background-image: url('../../img/drinks/coffee/200ml.svg'); /* Измените на нужное изображение */
+  margin-top: -40px;
+
+}
+/* ------------------------------------------------- */
+
+.sirop {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1037px;
+  height: 163px;
+  left: 21px;
+  top: 1300px;
+  box-sizing: border-box;
+  border: 1px solid rgb(245, 208, 9);
+  border-radius: 35px;
+  background: rgb(250, 250, 250); 
+  font-family: Mont;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 53.04px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.sirop:active {
+  transform: scale(0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  background-color: rgb(201, 201, 142);
+}
+
+.modal-drink-name {
+width: 1040px;
+height: 91px;
+left: 20px;
+margin-top: 750px;
+
+color: rgb(0, 0, 0);
+font-family: Mont;
+font-size: 82px;
+font-weight: 400;
+line-height: 110.5%;
+letter-spacing: 0%;
+text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 333px;
+  height: 159px;
+  left: 373px;
+  border: 1px solid rgb(211, 211, 211);
+  background: rgb(250, 250, 250);
+  border-radius: 0px 0px 25px 25px;
+
+}
+.x {
+  width: 58.98px;
+  height: 59.77px;
+  left: 498px;
+  top: 312px;
+  background-image: url('../../img/drinks/coffee/x.svg'); 
+  background-repeat: no-repeat;
+}
+.modal-close:active {
+  transform: scale(0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  background-color: black;
+  opacity: 20%;
+
+}
+
+/* ------------------------------------------------- */
+/* МОДАЛЬНОЕ СИРОПОВ */
+
+

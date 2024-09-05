@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'Mont';
+    src: url('../fonts/Mont-Regular.eot');
+    src: local('Mont Regular'), local('Mont-Regular'),
+        url('../fonts/Mont-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Mont-Regular.woff2') format('woff2'),
+        url('../fonts/Mont-Regular.woff') format('woff'),
+        url('../fonts/Mont-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../fonts/Mont-Bold.eot');
+    src: local('Mont Bold'), local('Mont-Bold'),
+        url('../fonts/Mont-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Mont-Bold.woff2') format('woff2'),
+        url('../fonts/Mont-Bold.woff') format('woff'),
+        url('../fonts/Mont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../fonts/Mont-Black.eot');
+    src: local('Mont Black'), local('Mont-Black'),
+        url('../fonts/Mont-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Mont-Black.woff2') format('woff2'),
+        url('../fonts/Mont-Black.woff') format('woff'),
+        url('../fonts/Mont-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.Main {
+    height: 1920px;
+    width: 1080px;
+    background: rgba(239, 204, 185, 1);
+}
+
+.Header {
+    width: 100%;
+    height: 300px;
+}
+.Select_text{
+/* Выбор напитка */
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 512px;
+    height: 71px;
+    font-family: Mont;
+    font-size: 64px;
+    line-height: 150px;
+    z-index: 3;
+}
+.SignUp{
+    /* Rectangle 10 */
+    position: absolute;
+    width: 392px;
+    height: 103px;
+    left: 667px;
+    top: 65px;
+    border-radius: 35px;
+    z-index: 3;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Icon {
+    width: 103px;
+    height: 103px;
+    top: 65px;
+    left: 667px;
+    gap: 0px;
+    border-radius: 35px 0px 0px 0px;
+    opacity: 0px;
+    background: url("../img/main/phone_back.svg");
+    background-size: contain;
+    z-index: 3;
+    background-repeat: no-repeat;
+}
+
+.Sign {
+    color: rgb(0, 0, 0);
+    font-family: Mont;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 110.5%;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.Vector {
+    position: absolute;
+    width: 450.19px;
+    height: 939.9px;
+    left: 565px;
+    background: url("../img/main/vector_main.svg");
+    background-size: contain;
+    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+.Block2 {
+    position: absolute;
+    width: 1080px;
+    top: 232px;
+    background: rgb(255, 255, 255);
+    border-radius: 50px 50px 0 0;
+}
+
+.Select_item {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Coffee,.Tea,.Milkshake,.Alternative {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Coffee-image,.Tea-image,.Milkshake-image,.Alternative-image {
+    width: 259px;
+    height: 256px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+
+  }
+  
+  .Coffee-image {
+    background: url("../img/main/CoffeeMain.svg");
+  }
+  
+  .Tea-image {
+    background: url("../img/main/TeaMain.svg");
+  }
+  
+  .Milkshake-image {
+    background: url("../img/main/MilkShakeMain.svg");
+  }
+  
+  .Alternative-image {
+    background: url("../img/main/AlternativeMain.svg");
+  }
+  
+  .Coffee-text,.Tea-text,.Milkshake-text,.Alternative-text {
+    font-family: Mont;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 41px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+.Eclipse1 {
+    /* Ellipse 9 */
+    position: absolute;
+    width: 161px;
+    height: 161px;
+    top: 90px;
+    left: 50px;
+    z-index: 1;
+    border-radius: 100px;
+}
+
+.Body {
+  position: absolute;
+
+  width: 1080px;
+  height: 1388px;
+  top: 570px;
+  background-color: white;
+}
+
+.Selected_Item {
+  position: absolute;
+  margin-top: 130px;
+  color: rgb(0, 0, 0);
+  font-family: Mont;
+  font-size: 83px;
+  font-weight: 400;
+  line-height: 110.5%;
+  letter-spacing: 0%;
+  text-align: left;
+  z-index: 2;
+}
+
+.Eclipse2 {
+  position: absolute;
+    width: 147px;
+    height: 147px;
+    top: 104px;
+    left: -40px;
+    border-radius: 100px;
+    z-index: 1;
+  }
+
+  .MainTable {
+    margin-top: 310px;
+  }
+
+  .Double {
+    position: absolute;
+    background: url("../img/drinks/coffee/double.svg");
+    /* Ellipse 8 */
+  width: 94px;
+  height: 94px;
+  left: 561px;
+  top: 320px;
+
+  }

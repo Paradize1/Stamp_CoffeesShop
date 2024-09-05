@@ -1,0 +1,22 @@
+.promo-carousel {
+    position: absolute;
+    height: 1920px;
+    width: 1080px;
+  }
+  
+  .promo-carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    transition: transform 3s ease-in-out;
+  }
+  
+  .promo-carousel-item.active {
+    transform: translateY(0);
+  }
+  
+  .promo-carousel-item:not(.active) {
+    transform: translateY(-100%);
+  }
