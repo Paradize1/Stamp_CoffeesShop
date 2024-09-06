@@ -6,11 +6,19 @@ import CashPayment from './CashPay';
 const Pay = () => {
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [price, setPrice] = useState(null);
+  const [finalOrder, setFinalOrder] = useState(null);
 
   useEffect(() => {
     const storedPrice = localStorage.getItem('price');
+    const storedOrder = localStorage.getItem('finalOrder');
+    
     if (storedPrice) {
       setPrice(storedPrice);
+    }
+
+    if (storedOrder) {
+      setFinalOrder(JSON.parse(storedOrder));
+      console.log('Данные о заказе:', JSON.parse(storedOrder)); // Выводим данные о заказе в консоль
     }
   }, []);
 

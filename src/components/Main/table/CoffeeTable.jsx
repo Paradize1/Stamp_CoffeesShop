@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
-
 import './CoffeeTable.css';
 
 const CoffeeTable = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-
   const [modalContent, setModalContent] = useState({ 
     name: '', 
     image: '', 
-    prices: { small: 0, medium: 0, large: 0 } });
-
+    prices: { small: 0, medium: 0, large: 0 } 
+  });
   const [isClosing, setIsClosing] = useState(false);
   const [selectedSize, setSelectedSize] = useState('small');
-  const [isSyrupModalOpen, setSyrupModalOpen] = useState(false); // Для второго модального окна
+  const [isSyrupModalOpen, setSyrupModalOpen] = useState(false);
   const [syrups, setSyrups] = useState({
     vanilla: 0,
     mint: 0,
     caramel: 0,
     chocolate: 0
   });
-
   const [finalPrice, setFinalPrice] = useState(0);
+  const [finalOrder, setFinalOrder] = useState(null);
 
   const openModal = (name, image, prices) => {
-    setModalContent({ name, image, prices});
+    setModalContent({ name, image, prices });
     setModalOpen(true);
   };
 
@@ -57,8 +55,6 @@ const CoffeeTable = () => {
     setSyrupModalOpen(false);
   };
 
-  
-  // Функции для изменения грамм сиропов
   const handleSyrupChange = (type, change) => {
     setSyrups(prevSyrups => {
       const newAmount = Math.max(prevSyrups[type] + change, 0);
@@ -68,22 +64,45 @@ const CoffeeTable = () => {
       };
     });
   };
-  
+
   const getSyrupPrice = () => {
-  const syrupPrice = 20;
-  const totalSyrups = Object.values(syrups).reduce((acc, amount) => acc + amount, 0);
-  return syrupPrice * totalSyrups;
+    const syrupPrice = 20;
+    const totalSyrups = Object.values(syrups).reduce((acc, amount) => acc + amount, 0);
+    return syrupPrice * totalSyrups;
   };
 
   useEffect(() => {
     const basePrice = getPrice();
     const syrupPrice = getSyrupPrice();
-    setFinalPrice(basePrice + syrupPrice);
+    const computedFinalPrice = basePrice + syrupPrice;
+    setFinalPrice(computedFinalPrice);
+    console.log('Base Price:', basePrice);
+    console.log('Syrup Price:', syrupPrice);
+    console.log('Computed Final Price:', computedFinalPrice);
   }, [selectedSize, syrups]);
 
   const handlePayClick = () => {
-    const price = isSyrupModalOpen? finalPrice : getPrice();
+    const price = isSyrupModalOpen ? finalPrice : getPrice();
+    const orderNumber = Math.floor(Math.random() * 101); // Генерация случайного номера заказа от 0 до 100
+
+    const newOrder = {
+      orderNumber,
+      coffee: `${modalContent.name} ${selectedSize === 'small' ? '200мл.' : selectedSize === 'medium' ? '300мл.' : '400мл.'} - ${getPrice()}₽`,
+      syrups: Object.keys(syrups)
+        .filter(syrup => syrups[syrup] > 0)
+        .map(syrup => `${syrup} - ${syrups[syrup]} гр. - 20₽`)
+        .join(', '),
+      total: finalPrice
+    };
+
+    console.log('Final Order:', newOrder);
+
+    setFinalOrder(newOrder);
+
+    // Сохраняем данные о заказе в localStorage
+    localStorage.setItem('finalOrder', JSON.stringify(newOrder));
     localStorage.setItem('price', price);
+
     window.location.href = '/pay';
   };
 
