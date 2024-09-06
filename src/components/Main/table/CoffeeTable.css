@@ -147,17 +147,17 @@
 .pay_price {
   position: absolute;
   width: 245px;
-height: 128px;
-top: 20px;
-left: 740px;
-gap: 0px;
-opacity: 0px;
+  height: 128px;
+  top: 20px;
+  left: 740px;
+  gap: 0px;
+  opacity: 0px;
 
-font-family: Mont;
-font-size: 100px;
-font-weight: 700;
-line-height: 127.8px;
-text-align: right;
+  font-family: Mont;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 127.8px;
+  text-align: right;
 
 }
 /* ------------------------------------------------- */
@@ -418,14 +418,14 @@ text-align: center;
 .pay_syrop_price {
   position: absolute;
   width: 245px;
-height: 128px;
-bottom: 20px;
-left: 740px;
-gap: 0px;
-opacity: 0px;
+  height: 128px;
+  bottom: 20px;
+  left: 740px;
+  gap: 0px;
+  opacity: 0px;
 
-font-family: Mont;
-font-size: 100px;
-font-weight: 700;
-line-height: 127.8px;
+  font-family: Mont;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 127.8px;
 }
